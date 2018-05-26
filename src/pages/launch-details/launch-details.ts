@@ -26,4 +26,13 @@ export class LaunchDetailsPage {
     console.log('ionViewDidLoad LaunchDetailsPage');
   }
 
+  goToExternalUri(uri: string) {
+    if(uri == "article") {
+      window.open(this.launch.links.article_link, '_system')
+    }else if(uri == "wiki") {
+      window.open(this.launch.links.wikipedia, '_system')
+    }else {
+      window.open(this.launch.links.video_link, '_system')
+    }
+  }
 }

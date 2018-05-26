@@ -39,22 +39,25 @@
     <ion-grid>
       <ion-row>
         <ion-col col-4>
-              <button ion-button style="font-size: 1.7em" color="light">
+              <button ion-button style="font-size: 1.7em" color="light" (click)="goToExternalUri('article')">
                   <ion-icon name="paper"></ion-icon>
               </button>
         </ion-col>
         <ion-col col-4>
-            <button ion-button style="font-size: 1.7em" color="light">
+            <button ion-button style="font-size: 1.7em" color="light" (click)="goToExternalUri('wiki')">
                 <ion-icon name="book"></ion-icon>
             </button>
       </ion-col>
       <ion-col col-4>
-          <button ion-button style="font-size: 1.7em" color="light">
+          <button ion-button style="font-size: 1.7em" color="light" (click)="goToExternalUri('video')">
               <ion-icon name="film"></ion-icon>
           </button>
     </ion-col>
       </ion-row>
     </ion-grid>
+  </ion-row>
+  <ion-row>
+    <p>{{ launch|json }}</p>
   </ion-row>
   </ion-grid>
 </ion-content>
