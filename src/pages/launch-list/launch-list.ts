@@ -19,7 +19,5 @@ export class LaunchListPage {
     });
   }
 
-  ionViewDidLoad() {
-    console.log("ionViewDidLoad LaunchListPage");
-  }
+  ionViewDidLoad() {}
 }
