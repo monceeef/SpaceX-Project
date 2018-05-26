@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Launch } from "../../Models/Launch"
 
+
 /**
  * Generated class for the LaunchDetailsPage page.
  *
@@ -17,14 +18,11 @@ import { Launch } from "../../Models/Launch"
 export class LaunchDetailsPage {
 
   launch: Launch
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     this.launch = this.navParams.data
-    
     console.log('ionViewDidLoad LaunchDetailsPage');
   }
 
