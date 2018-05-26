@@ -9,7 +9,7 @@ import { LaunchListPage } from "../launch-list/launch-list";
   templateUrl: "tabs.html"
 })
 export class TabsPage {
-  tab1Root = HomePage;
+  tab1Root = LaunchListPage;
   tab2Root = AboutPage;
   tab3Root = ContactPage;
   tab4Root = LaunchListPage;
