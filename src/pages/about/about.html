@@ -1,11 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      SpaceX
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content padding *ngIf="companyInfo">
+  <ion-list>
+  </ion-list>
+  {{ companyInfo|json }}
 </ion-content>
