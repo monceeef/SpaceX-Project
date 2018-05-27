@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        SpaceX
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding *ngIf="companyInfo">
+    <ion-list>
+      <ion-row>
+        <ion-col col-12>
+          <img src="../../assets/imgs/spaceX_logo2.jpg" style="height: 350px; width: auto" >
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3 style="margin-top: -90px; margin-left: 5px;">
+            <img src="../../assets/imgs/musk.jpg">
+        </ion-col>
+        <ion-col col-9  style="margin-top: -70px; margin-left: 100px;">
+          <h5 style="color:white; font-style: bold;">
+            {{ companyInfo.founder }}
+            Founder, CEO and CTO of {{ companyInfo.name }}
+          </h5>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin:auto;">
+        <ion-col col-1>
+          <ion-icon style="font-size: 1.1em;" name="logo-usd"> </ion-icon>     
+        </ion-col>
+        <ion-col col-11>
+          {{ companyInfo.valuation }} 
+        </ion-col>
+      </ion-row>
+      <ion-row  style="margin:auto;">
+          <ion-col col1>
+              <ion-icon style="font-size: 1.2em" name="people"> </ion-icon>     
+          </ion-col>
+          <ion-col col-11>
+             {{ companyInfo.employees }} 
+          </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+            <ion-icon style="font-size: 1.1em;" name="pin"> </ion-icon>     
+        </ion-col>
+        <ion-col col-11>
+            {{ companyInfo.headquarters.address }} {{ companyInfo.headquarters.city }} {{ companyInfo.headquarters.state }}
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 10px; text-align: center">
+        <ion-col>
+          {{ companyInfo.summary }}
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-content>
+  

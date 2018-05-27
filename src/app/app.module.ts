@@ -14,6 +14,7 @@ import { SpacexApiProvider } from "../providers/spacex-api/spacex-api";
 import { HttpClientModule } from "@angular/common/http";
 import { LaunchListPage } from "../pages/launch-list/launch-list";
 import { LaunchDetailsPage } from "../pages/launch-details/launch-details";
+import { CompanyInfoPage } from "../pages/company-info/company-info";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LaunchDetailsPage } from "../pages/launch-details/launch-details";
     HomePage,
     TabsPage,
     LaunchListPage,
-    LaunchDetailsPage
+    LaunchDetailsPage,
+    CompanyInfoPage
   ],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
@@ -35,7 +37,8 @@ import { LaunchDetailsPage } from "../pages/launch-details/launch-details";
     HomePage,
     TabsPage,
     LaunchListPage,
-    LaunchDetailsPage
+    LaunchDetailsPage,
+    CompanyInfoPage
   ],
   providers: [
     StatusBar,

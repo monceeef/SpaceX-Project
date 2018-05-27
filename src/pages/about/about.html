@@ -8,6 +8,10 @@
 
 <ion-content padding *ngIf="companyInfo">
   <ion-list>
+    <ion-row>
+      <ion-col col-12>
+          {{ companyInfo|json }}
+      </ion-col>
+    </ion-row>
   </ion-list>
-  {{ companyInfo|json }}
 </ion-content>
