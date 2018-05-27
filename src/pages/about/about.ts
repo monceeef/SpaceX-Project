@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { SpacexApiProvider } from "../../providers/spacex-api/spacex-api"
+import { CompanyInfo } from "../../Models/Launch"
 
 @Component({
   selector: 'page-about',
@@ -7,8 +9,14 @@ import { NavController } from 'ionic-angular';
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController) {
+  companyInfo: CompanyInfo
 
+  constructor(public navCtrl: NavController, private provider : SpacexApiProvider) {
+  }
+
+  ionViewDidLoad() {
+    this.provider.getCompanyInfo()
+    .subscribe( value => (this.companyInfo = value))
   }
 
 }
