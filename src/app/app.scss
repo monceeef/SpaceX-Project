@@ -1,28 +1,49 @@
 .launchHeader {
-    text-align: center;
+  text-align: center;
 }
 .launchContainer {
-    border: none;
+  border: none;
 }
 
 .launchDate {
-    border:none;
-    font-size: 10px;
+  border: none;
+  font-size: 10px;
 }
 
 .badge {
-    text-align: center;
-    margin: auto;
+  text-align: center;
+  margin: auto;
 }
 
 .launchDetails {
-    text-align: center
+  text-align: center;
 }
 
 .site {
-    margin: auto;
+  margin: auto;
 }
 
 .date {
-    margin: auto;
+  margin: auto;
+}
+
+.tabsContainer > .tabbar {
+  background: black;
+}
+.tab-button {
+  color: white !important;
+}
+.tab-button-icon {
+  color: white !important;
+}
+
+.rootPage {
+  background: #202020;
+}
+.navTheme {
+  background: black;
+}
+
+.toolbar-background {
+  background: #202020;
 }

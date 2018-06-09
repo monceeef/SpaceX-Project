@@ -1,20 +1,20 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar class="navTheme">
     <ion-title>
       Launch-List
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="rootLaunchList">
   <ion-list>
-    <ion-item *ngFor="let launch of launches" >
+    <ion-item *ngFor="let launch of launches" class="rootLaunchItem">
       <ion-avatar item-start (click)="goToLaunchDetails(launch)">
         <img src="{{launch.links.mission_patch_small}}">
       </ion-avatar>
-      <h2> {{launch.mission_name}}</h2>
+      <h2 class="lauchMName"> {{launch.mission_name}}</h2>
       <div>
-        <p>{{launch.details}}</p>
+        <p class="launchDetails">{{launch.details}}</p>
       </div>
       <div>
         <ion-badge>{{launch.launch_success}}</ion-badge>

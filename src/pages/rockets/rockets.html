@@ -1,0 +1,19 @@
+<ion-content class="rootPage">
+  <ion-navbar>
+    <ion-title>Rockets List</ion-title>
+  </ion-navbar>
+  <ion-list>
+    <ion-item *ngFor="let rocket of rockets" class="rocketUnit">
+      <ion-avatar item-start (click)="goToRocketDetail(rocket)">
+        <img src="../../assets/imgs/rocket.png">
+      </ion-avatar>
+      <h2 class="rocketName"> {{rocket.name}}</h2>
+      <div>
+        <p class="rocketDesc">{{rocket.description}}</p>
+      </div>
+      <div>
+        <ion-badge>{{rocket.active}}</ion-badge>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
