@@ -1,0 +1,48 @@
+<!--
+  Generated template for the RocketDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="navTheme">
+    <ion-title *ngIf="rocket">{{rocket.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content *ngIf="rocket" padding class="rootRocket">
+  <h2 class="rocketUTitle">{{ rocket.name }}</h2>
+  <p class="rocketUTitle">Country : {{rocket.country}}</p>
+
+  <ion-row>
+    <ion-col col-4 class="rocketUTitle">Stages : {{rocket.stages}}
+    </ion-col>
+    <ion-col col-4 class="rocketUTitle">
+      Cost Per Launch {{rocket.cost_per_launch}} $
+
+    </ion-col>
+    <ion-col col-4 class="rocketUTitle">
+      Success Rate {{rocket.success_rate_pct}} %
+    </ion-col>
+  </ion-row>
+  <ion-row class="rocketUTitle">First Flight : {{rocket.first_flight}}</ion-row>
+  <ion-row class="rocketUTitle">Dimensions :</ion-row>
+
+  <ion-row class="rocketUTitle">
+    <ion-col col-12>
+      Height : {{rocket.height.meters}} m
+    </ion-col>
+    <ion-col col-12>
+      Diameter {{rocket.diameter.meters}} m
+    </ion-col>
+    <ion-col col-12>
+      Mass {{rocket.mass.kg}} kg
+    </ion-col>
+  </ion-row>
+  <p class="rocketUTitle">Description : </p>
+  <br/>
+  <p> {{ rocket.description }}</p>
+</ion-content>
