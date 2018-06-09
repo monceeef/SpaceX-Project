@@ -29,4 +29,9 @@ export class SpacexApiProvider {
     const EndPointURL = `${this.baseUrl}/rockets`;
     return this.http.get<Rocket[]>(EndPointURL);
   }
+
+  getAllFuturLaunches(): Observable<Launch[]> {
+    const EndPointURL = `${this.baseUrl}/launches/upcoming`;
+    return this.http.get<Launch[]>(EndPointURL);
+  }
 }
