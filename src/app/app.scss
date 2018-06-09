@@ -1,28 +1,62 @@
 .launchHeader {
-    text-align: center;
+  text-align: center;
 }
 .launchContainer {
-    border: none;
+  border: none;
 }
 
 .launchDate {
-    border:none;
-    font-size: 10px;
+  border: none;
+  font-size: 10px;
 }
 
 .badge {
-    text-align: center;
-    margin: auto;
+  text-align: center;
+  margin: auto;
 }
 
 .launchDetails {
-    text-align: center
+  text-align: center;
 }
 
 .site {
-    margin: auto;
+  margin: auto;
 }
 
 .date {
-    margin: auto;
+  margin: auto;
+}
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.tabsContainer > .tabbar {
+  background: black;
+}
+.tab-button {
+  color: white !important;
+}
+.tab-button-icon {
+  color: white !important;
+}
+
+.rootPage {
+  background: #202020;
+}
+.navTheme {
+  background: black;
+}
+
+.toolbar-background {
+  background: #202020;
 }
