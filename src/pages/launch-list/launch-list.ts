@@ -5,6 +5,7 @@ import { Launch } from "../../Models/Launch";
 import { LaunchDetailsPage } from "../launch-details/launch-details";
 import { LocalNotifications } from "@ionic-native/local-notifications";
 import { LaunchPadDetailsPage } from "../launch-pad-details/launch-pad-details";
+import { RocketDetailPage } from "../rocket-detail/rocket-detail";
 
 @IonicPage()
 @Component({
@@ -63,5 +64,9 @@ export class LaunchListPage {
 
   goToLaunchPadDetails(id) {
     this.navCtrl.push(LaunchPadDetailsPage, id);
+  }
+
+  goToRocketDetails(id){
+    this.navCtrl.push(RocketDetailPage, id);
   }
 }

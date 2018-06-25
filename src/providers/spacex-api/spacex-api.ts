@@ -44,8 +44,12 @@ export class SpacexApiProvider {
   }
 
   getLaunchPadDetails(id) {
-    console.log(`id is ${id}`);
     let EndPointURL = `${this.baseUrl}/launchpads/${id}`;
     return this.http.get<LaunchPad>(EndPointURL);
   }
+
+  getRocketById(rocketId): Observable<Rocket> {
+    let endPoint = `${this.baseUrl}/rockets/${rocketId}`;
+    return this.http.get<Rocket>(endPoint);
+  } 
 }
