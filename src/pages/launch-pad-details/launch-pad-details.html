@@ -11,7 +11,7 @@
 </ion-header>
 
 
-<ion-content padding *ngIf="launchPad" class="has-header">
+<ion-content padding *ngIf="launchPad" class="launchPadDetailsRootContainer">
   <ion-list class="globalContainer">  
       <ion-row class="launchPadName">
           <h2 class="launchPadId">{{ launchPad.full_name }}</h2>
@@ -29,12 +29,12 @@
         </ion-col>
       </ion-row>
       <ion-row class="vehiclesLaunchedRow">
-          <ion-col>
-            <h6>Vehicles launched </h6>
+          <ion-col class="vehicleLaunchedTitle">
+            <h6>  Vehicles launched </h6>
           </ion-col>
           <ion-col>
             <ion-list *ngFor="let s of launchPad.vehicles_launched">
-              <ion-row>
+              <ion-row class="vehicleLaunched">
                 <h6>{{ s }}</h6>
               </ion-row>
             </ion-list>
