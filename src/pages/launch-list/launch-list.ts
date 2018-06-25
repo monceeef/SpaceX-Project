@@ -20,8 +20,9 @@ export class LaunchListPage {
   ) {
     
     this.spacexAPI.getAllLaunches().subscribe(data => {
-      this.launches = data;
+      this.launches = data.reverse();
     });
+
     this.spacexAPI.getAllFuturLaunches().subscribe(data => {
       data.forEach(futurLaunch => {
         this.localNotifications.schedule({
