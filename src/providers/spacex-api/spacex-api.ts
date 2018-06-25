@@ -24,4 +24,9 @@ export class SpacexApiProvider {
     const url = `${this.baseUrl}/info`
     return this.http.get<CompanyInfo>(url) 
   }
+
+  getAllFuturLaunches(): Observable<Launch[]> {
+    const EndPointURL = `${this.baseUrl}/launches/upcoming`;
+    return this.http.get<Launch[]>(EndPointURL);
+  }
 }

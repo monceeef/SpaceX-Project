@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
 import { MyApp } from "./app.component";
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 import { AboutPage } from "../pages/about/about";
 import { ContactPage } from "../pages/contact/contact";
@@ -44,7 +45,8 @@ import { CompanyInfoPage } from "../pages/company-info/company-info";
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    SpacexApiProvider
+    SpacexApiProvider,
+    LocalNotifications
   ]
 })
 export class AppModule {}
