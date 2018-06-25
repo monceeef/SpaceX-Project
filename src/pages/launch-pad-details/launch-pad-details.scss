@@ -1,3 +1,36 @@
 page-launch-pad-details {
 
 }
+
+.launchPadName{
+    text-align: center;
+    font-weight: bold;
+}
+.globalContainer{
+    margin-top: 80px;
+}
+
+.launchPadDetailsBadge {
+   font-weight:"bold"; 
+   font-size:"10px";
+}
+.launchPadLocation{
+    margin-top:20px;
+}
+.vehiclesLaunchedRow{
+    margin-top:20px;
+}
+
+.detailsRow {
+    margin-top:20px;
+    font-style: italic;
+    text-align: center;
+}
+
+.launchPadStatus{
+    margin-top:20px;
+}
+
+.launchPadAddress{
+    text-align: center;
+}

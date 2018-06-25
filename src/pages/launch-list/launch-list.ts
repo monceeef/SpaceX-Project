@@ -62,7 +62,6 @@ export class LaunchListPage {
   }
 
   goToLaunchPadDetails(id) {
-    console.log("Clicked");
     this.navCtrl.push(LaunchPadDetailsPage, id);
   }
 }
