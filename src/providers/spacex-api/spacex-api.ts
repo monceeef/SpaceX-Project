@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { PENDING } from "@angular/forms/src/model";
 import { Observable } from "rxjs/Observable";
 import { Launch, CompanyInfo, Rocket, LaunchPad } from "../../Models/Launch";
+import { Capsule } from "../../Models/Capsule";
 /*
   Generated class for the SpacexApiProvider provider.
 
@@ -51,5 +52,10 @@ export class SpacexApiProvider {
   getRocketById(rocketId): Observable<Rocket> {
     let endPoint = `${this.baseUrl}/rockets/${rocketId}`;
     return this.http.get<Rocket>(endPoint);
-  } 
+  }
+
+  getAllCapsules(): Observable<Capsule[]> {
+    const EndPointURL = `${this.baseUrl}/capsules`;
+    return this.http.get<Capsule[]>(EndPointURL);
+  }
 }
