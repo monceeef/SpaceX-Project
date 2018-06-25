@@ -40,6 +40,4 @@ export class LaunchListPage {
   goToLaunchDetails(launch) {
     this.navCtrl.push(LaunchDetailsPage,launch)
   }
-
-
 }
