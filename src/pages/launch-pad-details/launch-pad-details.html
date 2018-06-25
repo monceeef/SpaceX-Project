@@ -6,16 +6,42 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>LaunchPadDetails</ion-title>
+    <ion-title *ngIf="launchPad"> {{ launchPad.full_name }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding *ngIf="launchpad">
-  <ion-list>  
-      <ion-row>
-          <h2>{{ launchpad.full_name }}</h2>
+<ion-content padding *ngIf="launchPad" class="has-header">
+  <ion-list class="globalContainer">  
+      <ion-row class="launchPadName">
+          <h2 class="launchPadId">{{ launchPad.full_name }}</h2>
+      </ion-row>
+      <ion-row class="launchPadStatus">
+        <ion-badge *ngIf="launchPad.status == 'active'" class="badge launchPadDetailsBadge" color="secondary">{{ launchPad.status }}</ion-badge>
+        <ion-badge *ngIf="launchPad.status != 'active'" class="badge launchPadDetailsBadge" color="danger">{{ launchPad.status }}</ion-badge>
+      </ion-row>
+      <ion-row class="launchPadLocation">
+        <ion-col col-2>
+            <ion-icon name="pin" ></ion-icon>
+        </ion-col>
+        <ion-col col-10 class="launchPadAddress">
+          <h4>{{ launchPad.location.name }} <span>{{ launchPad.location.region }} </span></h4>
+        </ion-col>
+      </ion-row>
+      <ion-row class="vehiclesLaunchedRow">
+          <ion-col>
+            <h6>Vehicles launched </h6>
+          </ion-col>
+          <ion-col>
+            <ion-list *ngFor="let s of launchPad.vehicles_launched">
+              <ion-row>
+                <h6>{{ s }}</h6>
+              </ion-row>
+            </ion-list>
+          </ion-col>
+      </ion-row>
+      <ion-row class="detailsRow">
+        <h6>{{ launchPad.details }}</h6>
       </ion-row>
   </ion-list>
-  {{ launchpad | json }}
 </ion-content>
