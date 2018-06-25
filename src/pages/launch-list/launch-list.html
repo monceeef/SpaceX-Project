@@ -1,53 +1,167 @@
 <ion-header>
-  <ion-navbar class="navTheme">
-    <ion-title>
-      Launch-List
-    </ion-title>
-  </ion-navbar> 
+  <ion-toolbar class="navTheme">
+    <ion-segment [(ngModel)]="rocketList" color="primary">
+      <ion-segment-button value="future">
+        Future
+      </ion-segment-button>
+      <ion-segment-button value="past">
+        Past
+      </ion-segment-button>
+      <ion-segment-button value="next">
+        Next
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="rootLaunchList">
-  <ion-list>
-    <ion-item *ngFor="let launch of launches" class="rootLaunchItem">
-      <ion-grid>
-        <ion-row>
+  <div [ngSwitch]="rocketList">
+    <ion-list *ngSwitchCase="'future'">
+      <ion-item *ngFor="let launch of futureLaunches" class="rootLaunchItem">
+        <ion-grid>
+          <ion-row>
             <ion-col>
-                <h2 class="lauchMName" item-start> {{launch.mission_name}}</h2>
+              <h2 class="lauchMName" item-start> {{launch.mission_name}}</h2>
             </ion-col>
             <ion-col>
-                <div>
-                    <ion-badge *ngIf="launch.launch_success" class="badge" color="secondary" float-end>Succeeded</ion-badge>
-                    <ion-badge *ngIf="launch.launch_success == false" class="badge" color="danger" float-end>Failed</ion-badge>
-                    <ion-badge *ngIf="launch.launch_success == null" class="badge" color="primary" float-end>{{launch.launch_date_local | date: 'dd/MM/yyyy'}}</ion-badge>
-                  </div>
+              <div>
+                <ion-badge *ngIf="launch.launch_success" class="badge" color="secondary" float-end>Succeeded</ion-badge>
+                <ion-badge *ngIf="launch.launch_success == false" class="badge" color="danger" float-end>Failed</ion-badge>
+                <ion-badge *ngIf="launch.launch_success == null" class="badge" color="primary" float-end>{{launch.launch_date_local | date: 'dd/MM/yyyy'}}</ion-badge>
+              </div>
             </ion-col>
-        </ion-row>
-        <ion-row style="margin-top: 10px;">
-          <ion-col float-start >
+          </ion-row>
+          <ion-row style="margin-top: 10px;">
+            <ion-col float-start>
               <ion-avatar>
-                <img src="../../assets/imgs/rocket.png" class="rocket_icon"/>
+                <img src="../../assets/imgs/rocket.png" class="rocket_icon" />
               </ion-avatar>
             </ion-col>
-          <ion-col float-end>
-            <div>
-             <h2  float-end class="lauchMName"> {{ launch.rocket.rocket_name }}  <ion-icon class="black_icon" name="arrow-forward" > </ion-icon></h2>
-            </div>
+            <ion-col float-end>
+              <div>
+                <h2 float-end class="lauchMName"> {{ launch.rocket.rocket_name }}
+                  <ion-icon class="black_icon" name="arrow-forward"> </ion-icon>
+                </h2>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row style="margin-top: 10px;">
+            <ion-col float-start>
+              <ion-icon name="pin" class="black_icon"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <h2 float-end class="lauchMName"> {{ launch.launch_site.site_name }}
+                <ion-icon class="black_icon" name="arrow-forward" (click)="goToLaunchPadDetails(launch.launch_site.site_id)">
+                </ion-icon>
+              </h2>
+            </ion-col>
+          </ion-row>
+          <ion-row style="margin-top: 10px;">
+            <ion-col (click)="goToLaunchDetails(launch)">
+              <h2 class="lauchMName" float-end> more
+                <ion-icon name="more" class="black_icon"></ion-icon>
+              </h2>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'past'">
+      <ion-item *ngFor="let lc of pastLaunches" class="rootLaunchItem">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <h2 class="lauchMName" item-start> {{lc.mission_name}}</h2>
+            </ion-col>
+            <ion-col>
+              <div>
+                <ion-badge *ngIf="lc.launch_success" class="badge" color="secondary" float-end>Succeeded</ion-badge>
+                <ion-badge *ngIf="lc.launch_success == false" class="badge" color="danger" float-end>Failed</ion-badge>
+                <ion-badge *ngIf="lc.launch_success == null" class="badge" color="primary" float-end>{{lc.launch_date_local | date: 'dd/MM/yyyy'}}</ion-badge>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row style="margin-top: 10px;">
+            <ion-col float-start>
+              <ion-avatar>
+                <img src="../../assets/imgs/rocket.png" class="rocket_icon" />
+              </ion-avatar>
+            </ion-col>
+            <ion-col float-end>
+              <div>
+                <h2 float-end class="lauchMName"> {{ lc.rocket.rocket_name }}
+                  <ion-icon class="black_icon" name="arrow-forward"> </ion-icon>
+                </h2>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row style="margin-top: 10px;">
+            <ion-col float-start>
+              <ion-icon name="pin" class="black_icon"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <h2 float-end class="lauchMName"> {{ lc.launch_site.site_name }}
+                <ion-icon class="black_icon" name="arrow-forward" (click)="goToLaunchPadDetails(lc.launch_site.site_id)">
+                </ion-icon>
+              </h2>
+            </ion-col>
+          </ion-row>
+          <ion-row style="margin-top: 10px;">
+            <ion-col (click)="goToLaunchDetails(lc)">
+              <h2 class="lauchMName" float-end> more
+                <ion-icon name="more" class="black_icon"></ion-icon>
+              </h2>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'next'">
+      <ion-grid *ngIf="nextLaunch">
+        <ion-row class="launchContainer">
+          <ion-col col-6>
+            <img [src]="nextLaunch.links.mission_patch_small" />
+          </ion-col>
+          <ion-col col-6>
+            <ion-list>
+              <ion-row class="site">
+                <h4 class="launchHeader">{{ nextLaunch.launch_site.site_name}}</h4>
+              </ion-row>
+              <ion-row class="date">
+                <ion-datetime text-wrap class="launchDate" displayFormat="DD/MM/YYYY HH:mm:ss" [(ngModel)]="nextLaunch.launch_date_local"></ion-datetime>
+              </ion-row>
+              <ion-row>
+                <ion-badge *ngIf="nextLaunch.launch_success" class="badge" color="secondary">Succeeded</ion-badge>
+                <ion-badge *ngIf="!nextLaunch.launch_success" class="badge" color="danger">Failed</ion-badge>
+              </ion-row>
+            </ion-list>
           </ion-col>
         </ion-row>
-        <ion-row style="margin-top: 10px;">
-          <ion-col float-start>
-            <ion-icon name="pin" class="black_icon"></ion-icon>
-        </ion-col>
-        <ion-col>
-              <h2  float-end class="lauchMName" > {{ launch.launch_site.site_name }}  <ion-icon class="black_icon" name="arrow-forward" (click)="goToLaunchPadDetails(launch.launch_site.site_id)"> </ion-icon> </h2>
-        </ion-col>
+        <ion-row>
+          <p class="launchDetails">{{ nextLaunch.details }}</p>
         </ion-row>
-        <ion-row style="margin-top: 10px;">
-            <ion-col (click)="goToLaunchDetails(launch)">
-               <h2  class="lauchMName" float-end> more <ion-icon name="more" class="black_icon"></ion-icon></h2>
-            </ion-col>
+        <ion-row>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-4>
+                <button ion-button style="font-size: 1.7em" color="light" (click)="goToExternalUri('article')">
+                  <ion-icon name="paper"></ion-icon>
+                </button>
+              </ion-col>
+              <ion-col col-4>
+                <button ion-button style="font-size: 1.7em" color="light" (click)="goToExternalUri('wiki')">
+                  <ion-icon name="book"></ion-icon>
+                </button>
+              </ion-col>
+              <ion-col col-4>
+                <button ion-button style="font-size: 1.7em" color="light" (click)="goToExternalUri('video')">
+                  <ion-icon name="film"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
         </ion-row>
       </ion-grid>
-    </ion-item>
-  </ion-list>
+    </ion-list>
+  </div>
 </ion-content>

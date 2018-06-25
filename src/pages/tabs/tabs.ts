@@ -12,7 +12,6 @@ export class TabsPage {
   tab1Root = LaunchListPage;
   tab2Root = CompanyInfoPage;
   tab3Root = RocketsPage;
-  tab4Root = LaunchListPage;
 
   constructor() {}
 }
