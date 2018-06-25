@@ -4,6 +4,7 @@ import { SpacexApiProvider } from "../../providers/spacex-api/spacex-api";
 import { Launch } from "../../Models/Launch";
 import { LaunchDetailsPage } from "../launch-details/launch-details";
 import { LocalNotifications } from "@ionic-native/local-notifications";
+import { LaunchPadDetailsPage } from "../launch-pad-details/launch-pad-details";
 @IonicPage()
 @Component({
   selector: "page-launch-list",
@@ -39,5 +40,10 @@ export class LaunchListPage {
 
   goToLaunchDetails(launch) {
     this.navCtrl.push(LaunchDetailsPage,launch)
+  }
+
+  goToLaunchPadDetails(id) {
+    console.log("Clicked");
+    this.navCtrl.push(LaunchPadDetailsPage, id)
   }
 }

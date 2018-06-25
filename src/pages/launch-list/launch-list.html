@@ -38,9 +38,9 @@
           <ion-col float-start>
             <ion-icon name="pin" class="black_icon"></ion-icon>
         </ion-col>
-          <ion-col>
-              <h2 float-end class="lauchMName"> {{ launch.launch_site.site_name }}  <ion-icon class="black_icon" name="arrow-forward" > </ion-icon> </h2>
-          </ion-col>
+        <ion-col>
+              <h2  float-end class="lauchMName" > {{ launch.launch_site.site_name }}  <ion-icon class="black_icon" name="arrow-forward" (click)="goToLaunchPadDetails(launch.launch_site.site_id)"> </ion-icon> </h2>
+        </ion-col>
         </ion-row>
         <ion-row style="margin-top: 10px;">
             <ion-col (click)="goToLaunchDetails(launch)">

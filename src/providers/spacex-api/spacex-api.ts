@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { PENDING } from "@angular/forms/src/model";
 import { Observable } from "rxjs/Observable";
-import { Launch, CompanyInfo,Rocket } from "../../Models/Launch";
+import { Launch, CompanyInfo,Rocket, LaunchPad } from "../../Models/Launch";
 /*
   Generated class for the SpacexApiProvider provider.
 
@@ -33,5 +33,11 @@ export class SpacexApiProvider {
   getAllFuturLaunches(): Observable<Launch[]> {
     const EndPointURL = `${this.baseUrl}/launches/upcoming`;
     return this.http.get<Launch[]>(EndPointURL);
+  }
+
+  getLaunchPadDetails(id) {
+    console.log(`id is ${id}`);
+    let EndPointURL = `${this.baseUrl}/launchpads/${id}`;
+    return this.http.get<LaunchPad>(EndPointURL);
   }
 }

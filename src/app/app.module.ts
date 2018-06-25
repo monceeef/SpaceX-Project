@@ -16,6 +16,7 @@ import { LaunchDetailsPage } from "../pages/launch-details/launch-details";
 import { CompanyInfoPage } from "../pages/company-info/company-info";
 import { RocketsPage } from "../pages/rockets/rockets";
 import { RocketDetailPage } from "../pages/rocket-detail/rocket-detail";
+import { LaunchPadDetailsPage } from "../pages/launch-pad-details/launch-pad-details";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RocketDetailPage } from "../pages/rocket-detail/rocket-detail";
     LaunchListPage,
     LaunchDetailsPage,
     RocketDetailPage,
-    CompanyInfoPage
+    CompanyInfoPage,
+    LaunchPadDetailsPage
   ],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
@@ -38,7 +40,8 @@ import { RocketDetailPage } from "../pages/rocket-detail/rocket-detail";
     LaunchListPage,
     LaunchDetailsPage,
     RocketDetailPage,
-    CompanyInfoPage
+    CompanyInfoPage,
+    LaunchPadDetailsPage
   ],
   providers: [
     StatusBar,
