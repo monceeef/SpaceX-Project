@@ -1,4 +1,4 @@
-page-company-info {
+page-company-info {}
 
 .auto_margin_row {
     margin: auto;
@@ -7,4 +7,23 @@ page-company-info {
     border-right: 1px solid #488aff ;
 }
 
+.companyPicture.resize {
+    height: 350px; 
+    width: auto
+}
+
+.companyPictureBloc {
+    margin-top: 35px;
+}
+
+.companyInfoRootContainer {
+    background: #202020;
+}
+
+.toWhiteIcon {
+    color: white;
+}
+
+.toWhiteLabel {
+    color: white;
 }

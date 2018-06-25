@@ -5,6 +5,7 @@ page-launch-pad-details {
 .launchPadName{
     text-align: center;
     font-weight: bold;
+    color: white;
 }
 .globalContainer{
     margin-top: 80px;
@@ -16,6 +17,7 @@ page-launch-pad-details {
 }
 .launchPadLocation{
     margin-top:20px;
+    color: white;
 }
 .vehiclesLaunchedRow{
     margin-top:20px;
@@ -25,6 +27,7 @@ page-launch-pad-details {
     margin-top:20px;
     font-style: italic;
     text-align: center;
+    color: white;
 }
 
 .launchPadStatus{
@@ -33,4 +36,17 @@ page-launch-pad-details {
 
 .launchPadAddress{
     text-align: center;
+    color: white;
+}
+
+.launchPadDetailsRootContainer {
+    background: #202020;
+}
+
+.vehicleLaunchedTitle {
+    color: white;
+}
+
+.vehicleLaunched {
+    color: white;
 }
