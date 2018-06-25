@@ -1,0 +1,19 @@
+<ion-content class="rootPage">
+  <ion-navbar>
+    <ion-title>Capsules List</ion-title>
+  </ion-navbar>
+  <ion-list>
+    <ion-item *ngFor="let capsule of capsules" class="capsuleUnit">
+      <ion-avatar item-start (click)="goToCapsuleDetail(capsule)">
+        <img src="../../assets/imgs/cap.png">
+      </ion-avatar>
+      <h2 class="capsuleName"> {{capsule.name}}</h2>
+      <div>
+        <p class="capsuleDesc">{{capsule.description}}</p>
+      </div>
+      <div>
+        <ion-badge>{{capsule.active}}</ion-badge>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
