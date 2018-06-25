@@ -10,6 +10,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding *ngIf="launchPad">
-  {{ launchPad | json }}
+
+<ion-content padding *ngIf="launchpad">
+  <ion-list>  
+      <ion-row>
+          <h2>{{ launchpad.full_name }}</h2>
+      </ion-row>
+  </ion-list>
+  {{ launchpad | json }}
 </ion-content>
