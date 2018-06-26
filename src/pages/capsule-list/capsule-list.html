@@ -13,6 +13,8 @@
       </div>
       <div>
         <ion-badge>{{capsule.active}}</ion-badge>
+        <ion-badge *ngIf="capsule.active" class="badge" color="secondary" float-end>Active</ion-badge>
+        <ion-badge *ngIf="!capsule.active" class="badge" color="danger" float-end>Not Active</ion-badge>
       </div>
     </ion-item>
   </ion-list>
