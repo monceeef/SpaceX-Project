@@ -3,8 +3,8 @@
     <ion-title>Capsules List</ion-title>
   </ion-navbar>
   <ion-list>
-    <ion-item *ngFor="let capsule of capsules" class="capsuleUnit">
-      <ion-avatar item-start (click)="goToCapsuleDetail(capsule)">
+    <ion-item *ngFor="let capsule of capsules" class="capsuleUnit" (click)="goToCapsuleDetail(capsule)"Ò>
+      <ion-avatar item-start >
         <img src="../../assets/imgs/cap.png">
       </ion-avatar>
       <h2 class="capsuleName"> {{capsule.name}}</h2>
