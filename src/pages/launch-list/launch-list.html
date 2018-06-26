@@ -45,7 +45,7 @@
               </div>
             </ion-col>
           </ion-row>
-          <ion-row style="margin-top: 10px;"  (click)="goToLaunchPadDetails(launch.launch_site.site_id)">
+          <ion-row style="margin-top: 10px;" (click)="goToLaunchPadDetails(launch.launch_site.site_id)">
             <ion-col float-start>
               <ion-icon name="pin" class="black_icon"></ion-icon>
             </ion-col>
@@ -56,8 +56,8 @@
               </h2>
             </ion-col>
           </ion-row>
-          <ion-row style="margin-top: 10px;">
-            <ion-col (click)="goToLaunchDetails(launch)">
+          <ion-row style="margin-top: 10px;" (click)="goToLaunchDetails(launch)">
+            <ion-col>
               <h2 class="lauchMName" float-end> more
                 <ion-icon name="more" class="black_icon"></ion-icon>
               </h2>
@@ -99,15 +99,15 @@
             <ion-col float-start>
               <ion-icon name="pin" class="black_icon"></ion-icon>
             </ion-col>
-            <ion-col >
+            <ion-col>
               <h2 float-end class="lauchMName"> {{ lc.launch_site.site_name }}
                 <ion-icon class="black_icon" name="arrow-forward" >
                 </ion-icon>
               </h2>
             </ion-col>
           </ion-row>
-          <ion-row style="margin-top: 10px;">
-            <ion-col (click)="goToLaunchDetails(lc)">
+          <ion-row style="margin-top: 10px;" (click)="goToLaunchDetails(lc)">
+            <ion-col>
               <h2 class="lauchMName" float-end> more
                 <ion-icon name="more" class="black_icon"></ion-icon>
               </h2>
