@@ -14,23 +14,25 @@
 
 
 <ion-content *ngIf="rocket" padding class="rootRocket">
-  <h2 class="rocketUTitle">{{ rocket.name }}</h2>
-  <p class="rocketUTitle">Country : {{rocket.country}}</p>
-
+  <h4 class="rocketUTitle">Country :</h4>
+  <p>{{rocket.country}}</p>
+  <h4 class="rocketUTitle">Details :</h4>
   <ion-row>
-    <ion-col col-4 class="rocketUTitle">Stages : {{rocket.stages}}
+    <ion-col col-4 class="rocketUTitle">Stages :
+      <ion-row> {{rocket.stages}} </ion-row>
     </ion-col>
     <ion-col col-4 class="rocketUTitle">
-      Cost Per Launch {{rocket.cost_per_launch}} $
-
+      CPL
+      <ion-row> {{rocket.cost_per_launch}} $</ion-row>
     </ion-col>
     <ion-col col-4 class="rocketUTitle">
-      Success Rate {{rocket.success_rate_pct}} %
+      Success Rate
+      <ion-row> {{rocket.success_rate_pct}} % </ion-row>
     </ion-col>
   </ion-row>
-  <ion-row class="rocketUTitle">First Flight : {{rocket.first_flight}}</ion-row>
-  <ion-row class="rocketUTitle">Dimensions :</ion-row>
-
+  <h4 class="rocketUTitle">First Flight : </h4>
+  <p>{{rocket.first_flight}}</p>
+  <h4 class="rocketUTitle">Dimensions :</h4>
   <ion-row class="rocketUTitle">
     <ion-col col-12>
       Height : {{rocket.height.meters}} m
@@ -42,7 +44,6 @@
       Mass {{rocket.mass.kg}} kg
     </ion-col>
   </ion-row>
-  <p class="rocketUTitle">Description : </p>
-  <br/>
+  <h4 class="rocketUTitle">Description : </h4>
   <p> {{ rocket.description }}</p>
 </ion-content>
