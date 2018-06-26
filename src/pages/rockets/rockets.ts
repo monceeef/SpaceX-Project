@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
-import { Rocket } from "../../Models/Launch";
+import { Rocket } from "../../Models/Rocket";
 import { SpacexApiProvider } from "../../providers/spacex-api/spacex-api";
 import { RocketDetailPage } from "../rocket-detail/rocket-detail";
 

@@ -2,7 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { PENDING } from "@angular/forms/src/model";
 import { Observable } from "rxjs/Observable";
-import { Launch, CompanyInfo, Rocket, LaunchPad } from "../../Models/Launch";
+import { Launch, CompanyInfo, LaunchPad } from "../../Models/Launch";
+import { Rocket } from "../../Models/Rocket";
 import { Capsule } from "../../Models/Capsule";
 /*
   Generated class for the SpacexApiProvider provider.
