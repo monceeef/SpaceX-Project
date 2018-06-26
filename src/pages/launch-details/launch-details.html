@@ -26,9 +26,9 @@
             <ion-datetime text-wrap class="launchDate" displayFormat="DD/MM/YYYY HH:mm:ss" [(ngModel)]="launch.launch_date_local"></ion-datetime>
           </ion-row>
           <ion-row>
-            <ion-badge *ngIf="launch.launch_success" class="badge" color="secondary">Succeeded</ion-badge>
-            <ion-badge *ngIf="!launch.launch_success" class="badge" color="danger">Failed</ion-badge>
-          </ion-row>
+            <ion-badge *ngIf="launch.launch_success" class="badge" color="secondary" float-end>Succeeded</ion-badge>
+            <ion-badge *ngIf="launch.launch_success == false" class="badge" color="danger" float-end>Failed</ion-badge>
+            <ion-badge *ngIf="launch.launch_success == null" class="badge" color="primary" float-end>{{launch.launch_date_local | date: 'dd/MM/yyyy'}}</ion-badge></ion-row>
         </ion-list>
       </ion-col>
     </ion-row>
