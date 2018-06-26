@@ -59,4 +59,20 @@ export class SpacexApiProvider {
     const EndPointURL = `${this.baseUrl}/capsules`;
     return this.http.get<Capsule[]>(EndPointURL);
   }
+
+  getLaunchesByStatus(bool) : Observable<Launch[]>{
+    let endPoint = `${this.baseUrl}/launches?launch_success=bool`
+    return this.http.get<Launch[]>(endPoint);
+  }
+
+  getFailedLaunches() : Observable<Launch[]>{
+    let endPoint = `${this.baseUrl}/launches?launch_success=false`
+    return this.http.get<Launch[]>(endPoint);
+  }
+
+  getSucceededLaunches() : Observable<Launch[]>{
+    let endPoint = `${this.baseUrl}/launches?launch_success=true`
+    return this.http.get<Launch[]>(endPoint);
+  }
+
 }

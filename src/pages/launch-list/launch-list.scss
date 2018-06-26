@@ -1,12 +1,26 @@
 page-launch-list {
 }
 
-.rootLaunchList {
+.blackBkgrd {
   background: #202020;
 }
-
 .rootLaunchItem {
   background: #202020;
+}
+.launchMissionName {
+  font-size:20px; 
+  font-weight: bolder; 
+  color: antiquewhite
+}
+
+.launchItemRowMargin {
+  margin-top: 3px;
+}
+.launchesRootContainer {
+  margin-top:25px;
+}
+.whiteLabel  {
+  color: white;
 }
 
 .lauchMName {

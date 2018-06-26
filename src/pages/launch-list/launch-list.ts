@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams, Platform } from "ionic-angular";
+import { IonicPage, NavController, NavParams, Platform, FabContainer } from "ionic-angular";
 import { SpacexApiProvider } from "../../providers/spacex-api/spacex-api";
 import { Launch } from "../../Models/Launch";
 import { LaunchDetailsPage } from "../launch-details/launch-details";
@@ -17,6 +17,8 @@ export class LaunchListPage {
   pastLaunches: Launch[];
   nextLaunch: Launch;
   rocketList: string = "future";
+
+  launches: Launch[];
 
   constructor(
     public navCtrl: NavController,
@@ -48,6 +50,58 @@ export class LaunchListPage {
         });
       });
     });
+    
+    this.spacexAPI.getAllLaunches().subscribe( data => {
+      this.launches = data;
+    });
+  }
+
+  loadPastLaunches(fab: FabContainer) {
+    this.launches.length = 0;
+    this.spacexAPI.getAllPastLaunches().subscribe(data => {
+      this.launches = data;
+    })
+    fab.close();
+  }
+
+  loadFutureLaunches(fab : FabContainer) {
+    this.launches.length = 0;
+    this.spacexAPI.getAllFuturLaunches().subscribe(data => {
+      this.launches = data;
+    })
+    fab.close();
+  }
+
+  loadLaunchesByStatus(fab : FabContainer, bool) {
+    this.launches.length = 0;
+    this.spacexAPI.getLaunchesByStatus(bool).subscribe(data => {
+        this.launches = data;
+    })
+    fab.close();
+  }
+
+  loadSucceededLaunches(fab : FabContainer){
+    this.launches.length = 0;
+    this.spacexAPI.getSucceededLaunches().subscribe(data => {
+      this.launches = data;
+    })
+    fab.close();
+  }
+
+  loadFailedLaunches(fab : FabContainer){
+    this.launches.length = 0;
+    this.spacexAPI.getFailedLaunches().subscribe(data => {
+      this.launches = data;
+    })
+    fab.close();
+  }
+
+  loadAllLaunches(fab : FabContainer){
+    this.launches.length = 0;
+    this.spacexAPI.getAllLaunches().subscribe(data => {
+      this.launches = data;
+    })
+    fab.close();
   }
 
   ionViewDidLoad() {}
