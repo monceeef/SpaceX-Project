@@ -25,10 +25,6 @@ export class LaunchListPage {
     public platform: Platform,
     public localNotifications: LocalNotifications
   ) {
-    this.spacexAPI.getAllLaunches().subscribe(data => {
-      this.futureLaunches = data.reverse();
-    });
-
     this.spacexAPI.getAllPastLaunches().subscribe(data => {
       this.pastLaunches = data;
     });
