@@ -20,10 +20,11 @@ export class RocketDetailPage {
   rocketId: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     private spaceXProvider: SpacexApiProvider) {
-      /*
+    
       let param = this.navParams.data;
-      if('name' in param) {
-        this.rocket = this.navParams.data;
+      
+    if (param.name) {
+        this.rocket = param;
       } else {
         this.spaceXProvider
         .getRocketById(param)
@@ -31,11 +32,10 @@ export class RocketDetailPage {
           this.rocket = value;
         })
       }
-      */
     }
 
   ionViewDidLoad() {
-    this.rocket = this.navParams.data;
+    //this.rocket = this.navParams.data;
   }
 
 }
