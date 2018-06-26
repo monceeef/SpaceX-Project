@@ -2,18 +2,27 @@
   <ion-navbar>
     <ion-title>Rockets List</ion-title>
   </ion-navbar>
-  <ion-list>
-    <ion-item *ngFor="let rocket of rockets" class="rocketUnit" (click)="goToRocketDetail(rocket)">
-      <ion-avatar item-start >
-        <img src="../../assets/imgs/rocket.png">
-      </ion-avatar>
-      <h2 class="rocketName"> {{rocket.name}}</h2>
-      <div>
-        <p class="rocketDesc">{{rocket.description}}</p>
-      </div>
-      <div>
-        <ion-badge>{{rocket.active}}</ion-badge>
-      </div>
+    <ion-item *ngFor="let rocket of rockets" class="rocketUnit">
+    <ion-card class="rocketCardContainer" (click)="goToRocketDetail(rocket)">
+      <ion-card-header>
+        <img *ngIf="rocket.name == 'Falcon 1'" src="../../assets/imgs/falcon1.jpg"/>
+        <img *ngIf="rocket.name == 'Falcon 9'" src="../../assets/imgs/flacon9.jpg"/>
+        <img *ngIf="rocket.name == 'Falcon Heavy'" src="../../assets/imgs/falconHeavy.jpg"/>
+        <img *ngIf=" rocket.name == 'Big Falcon Rocket'" src="../../assets/imgs/bigFalconRocket.jpg"/>
+      </ion-card-header>
+      <ion-list >
+        <ion-row ion-item class="RocketListItemList">
+          <h2 style="color:white; margin-left: 15px;"> {{rocket.name}}  
+            <span> 
+              <ion-badge class="badge" color="secondary" *ngIf="rocket.active">Active</ion-badge> 
+              <ion-badge class="badge" color="danger" *ngIf="rocket.active == false">Inactive</ion-badge>
+            </span>
+          </h2>
+          <div>
+              <p class="rocketDesc" > {{ rocket.description }} </p>
+          </div>
+        </ion-row>
+      </ion-list>
+    </ion-card>
     </ion-item>
-  </ion-list>
 </ion-content>
