@@ -33,6 +33,13 @@ export class LaunchListPage {
     });
     this.spacexAPI.getAllFuturLaunches().subscribe(data => {
       this.futureLaunches = data;
+      // Test of notification
+      this.localNotifications.schedule({
+        id: 4242,
+        text: "TestNotifications Mission starting now !",
+        trigger: { at: new Date(new Date().getTime() + 1000) }
+      });
+
       data.forEach(futurLaunch => {
         this.localNotifications.schedule({
           id: futurLaunch.flight_number,
