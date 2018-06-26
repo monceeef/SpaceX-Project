@@ -3,8 +3,8 @@
     <ion-title>Rockets List</ion-title>
   </ion-navbar>
   <ion-list>
-    <ion-item *ngFor="let rocket of rockets" class="rocketUnit">
-      <ion-avatar item-start (click)="goToRocketDetail(rocket)">
+    <ion-item *ngFor="let rocket of rockets" class="rocketUnit" (click)="goToRocketDetail(rocket)">
+      <ion-avatar item-start >
         <img src="../../assets/imgs/rocket.png">
       </ion-avatar>
       <h2 class="rocketName"> {{rocket.name}}</h2>
