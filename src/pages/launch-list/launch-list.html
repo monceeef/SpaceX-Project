@@ -45,13 +45,13 @@
               </div>
             </ion-col>
           </ion-row>
-          <ion-row style="margin-top: 10px;">
+          <ion-row style="margin-top: 10px;"  (click)="goToLaunchPadDetails(launch.launch_site.site_id)">
             <ion-col float-start>
               <ion-icon name="pin" class="black_icon"></ion-icon>
             </ion-col>
             <ion-col>
               <h2 float-end class="lauchMName"> {{ launch.launch_site.site_name }}
-                <ion-icon class="black_icon" name="arrow-forward" (click)="goToLaunchPadDetails(launch.launch_site.site_id)">
+                <ion-icon class="black_icon" name="arrow-forward">
                 </ion-icon>
               </h2>
             </ion-col>
@@ -81,13 +81,13 @@
               </div>
             </ion-col>
           </ion-row>
-          <ion-row style="margin-top: 10px;">
+          <ion-row style="margin-top: 10px;" (click)="goToRocketDetails(lc.rocket.rocket_id)">
             <ion-col float-start>
               <ion-avatar>
                 <img src="../../assets/imgs/rocket.png" class="rocket_icon" />
               </ion-avatar>
             </ion-col>
-            <ion-col float-end (click)="goToRocketDetails(lc.rocket.rocket_id)">
+            <ion-col float-end>
               <div>
                 <h2 float-end class="lauchMName"> {{ lc.rocket.rocket_name }}
                   <ion-icon class="black_icon" name="arrow-forward"> </ion-icon>
@@ -95,11 +95,11 @@
               </div>
             </ion-col>
           </ion-row>
-          <ion-row style="margin-top: 10px;">
+          <ion-row style="margin-top: 10px;" (click)="goToLaunchPadDetails(lc.launch_site.site_id)">
             <ion-col float-start>
               <ion-icon name="pin" class="black_icon"></ion-icon>
             </ion-col>
-            <ion-col (click)="goToLaunchPadDetails(lc.launch_site.site_id)">
+            <ion-col >
               <h2 float-end class="lauchMName"> {{ lc.launch_site.site_name }}
                 <ion-icon class="black_icon" name="arrow-forward" >
                 </ion-icon>
