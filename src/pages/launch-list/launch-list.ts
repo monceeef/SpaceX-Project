@@ -13,9 +13,14 @@ import { RocketDetailPage } from "../rocket-detail/rocket-detail";
   templateUrl: "launch-list.html"
 })
 export class LaunchListPage {
+
+  remainingTime = 0;
+  remainingTimeString: String;
+
   futureLaunches: Launch[];
   pastLaunches: Launch[];
   nextLaunch: Launch;
+  countDownDate : Date;
   rocketList: string = "future";
 
   launches: Launch[];
@@ -27,11 +32,12 @@ export class LaunchListPage {
     public platform: Platform,
     public localNotifications: LocalNotifications
   ) {
-    this.spacexAPI.getAllPastLaunches().subscribe(data => {
-      this.pastLaunches = data;
-    });
+
+    setInterval( () => { this.logRemainingTime() } ,1000);
+
     this.spacexAPI.getNextLaunch().subscribe(data => {
       this.nextLaunch = data;
+      this.countDownDate = new Date(this.nextLaunch.launch_date_local)
     });
     this.spacexAPI.getAllFuturLaunches().subscribe(data => {
       this.futureLaunches = data;
@@ -126,4 +132,23 @@ export class LaunchListPage {
   goToRocketDetails(id){
     this.navCtrl.push(RocketDetailPage, id);
   }
+
+  logRemainingTime(){
+
+    if(this.nextLaunch) {
+
+      let now = new Date().getTime()
+      this.remainingTime = this.countDownDate.getTime() - now
+
+      let days = Math.floor(this.remainingTime / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((this.remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((this.remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor(this.remainingTime % (1000 * 60) / 1000);
+
+      console.log( days +' : ' + hours + ' : ' + minutes + ' : ' +seconds);
+      this.remainingTimeString = days +'d ' + hours + 'h ' + minutes + 'm ' +seconds + 's';
+    }
+    
+  }
+
 }

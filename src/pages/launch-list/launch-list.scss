@@ -1,6 +1,10 @@
 page-launch-list {
 }
 
+.nextLaunchContainer{
+  background-image: url("../../assets/imgs/spaceX_launch.jpg")
+}
+
 .blackBkgrd {
   background: #202020;
 }
@@ -17,7 +21,7 @@ page-launch-list {
   margin-top: 3px;
 }
 .launchesRootContainer {
-  margin-top:25px;
+  margin-top:40px;
 }
 .whiteLabel  {
   color: white;
