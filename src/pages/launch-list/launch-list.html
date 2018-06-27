@@ -17,6 +17,33 @@
           </ion-fab-list>
     </ion-fab>
 
+
+  <ion-card *ngIf="nextLaunch" class="blackBkgrd" style="background-image: url('../../assets/imgs/spaceX_launch.jpg')">
+    <ion-card-header>
+      <ion-list>
+          <ion-row justify-content-center style="margin-top: 5px;">
+              <p class="whiteLabel" style="font-size:18px; font-weight: bolder; color: antiquewhite;"> Next Launch </p>
+            </ion-row>
+        <ion-row justify-content-center style="margin-top: 5px;">
+          <p class="whiteLabel" style="font-size:18px; font-weight: bolder; color: antiquewhite;"> {{ nextLaunch.mission_name }} </p> <br>
+        </ion-row>
+        <ion-row justify-content-center style="margin-top: 5px;">
+          <p style="font-size:20px; font-weight: bolder; color: antiquewhite;">
+             {{ remainingTimeString }} 
+          </p>
+        </ion-row>
+        <ion-row justify-content-center style="padding-top: 10px;">
+          <img src="../../assets/imgs/rocket.png" style="height: 35px; width: 35px">
+          <p style="font-size:20px; font-weight: bolder; color: antiquewhite; padding-left: 10px"> {{ nextLaunch.rocket.rocket_name }} </p>
+        </ion-row>
+        <ion-row style="padding-top: 10px;">
+            <p style="font-size:13px; font-weight: bolder; color: antiquewhite; text-align: center" text-wrap> <ion-icon name="pin" style="color:antiquewhite"> </ion-icon> {{  nextLaunch.launch_site.site_name_long }}</p>
+        </ion-row>
+      </ion-list>
+    </ion-card-header>
+  </ion-card>
+
+
   <ion-list *ngFor="let launch of launches" >
       <ion-card class="blackBkgrd" (click)="goToLaunchDetails(launch)">
         <ion-card-header>
