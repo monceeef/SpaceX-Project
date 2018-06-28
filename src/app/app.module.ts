@@ -19,6 +19,14 @@ import { RocketDetailPage } from "../pages/rocket-detail/rocket-detail";
 import { LaunchPadDetailsPage } from "../pages/launch-pad-details/launch-pad-details";
 import { CapsuleListPage } from "../pages/capsule-list/capsule-list";
 import { CapsuleDetailsPage } from "../pages/capsule-details/capsule-details";
+import { LaunchPadMapPage } from "../pages/launch-pad-map/launch-pad-map";
+
+import { GoogleMaps, 
+  GoogleMap, 
+  GoogleMapsEvent,
+  Marker, 
+  GoogleMapsAnimation, 
+  MyLocation } from '@ionic-native/google-maps'
 
 @NgModule({
   declarations: [
@@ -32,7 +40,8 @@ import { CapsuleDetailsPage } from "../pages/capsule-details/capsule-details";
     CompanyInfoPage,
     LaunchPadDetailsPage,
     CapsuleListPage,
-    CapsuleDetailsPage
+    CapsuleDetailsPage,
+    LaunchPadMapPage
   ],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
@@ -47,14 +56,16 @@ import { CapsuleDetailsPage } from "../pages/capsule-details/capsule-details";
     CompanyInfoPage,
     LaunchPadDetailsPage,
     CapsuleListPage,
-    CapsuleDetailsPage
+    CapsuleDetailsPage,
+    LaunchPadMapPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     SpacexApiProvider,
-    LocalNotifications
+    LocalNotifications,
+    GoogleMaps,
   ]
 })
 export class AppModule {}

@@ -10,8 +10,8 @@
         <img *ngIf="rocket.name == 'Falcon Heavy'" src="../../assets/imgs/falconHeavy.jpg"/>
         <img *ngIf=" rocket.name == 'Big Falcon Rocket'" src="../../assets/imgs/bigFalconRocket.jpg"/>
       </ion-card-header>
-      <ion-list >
-        <ion-row ion-item class="RocketListItemList">
+      <ion-list>
+        <ion-row class="RocketListItemList">
           <h2 style="color:white; margin-left: 15px;"> {{rocket.name}}  
             <span> 
               <ion-badge class="badge" color="secondary" *ngIf="rocket.active">Active</ion-badge> 
