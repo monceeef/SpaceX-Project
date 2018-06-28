@@ -35,39 +35,32 @@
     <ion-row>
       <p class="launchDetails">{{ launch.details }}</p>
     </ion-row>
-    <ion-row>
-      <ion-grid>
-        <ion-row>
-          <ion-col col-4>
-            <button ion-button style="font-size: 1.7em" color="light" (click)="goToExternalUri('article')">
-              <ion-icon name="paper"></ion-icon>
-            </button>
-          </ion-col>
-          <ion-col>
-              <h6 style="color:white; margin-top:15px!important;">Reddit</h6>
-          </ion-col>
-        </ion-row>    
-          <ion-row>
-            <ion-col col-4>
-              <button ion-button style="font-size: 1.7em" color="light" (click)="goToExternalUri('wiki')">
-                <ion-icon name="book"></ion-icon>
-              </button>
-            </ion-col>
-            <ion-col>
-                <h6 style="color:white; margin-top:15px!important;">Wikipedia</h6>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-4>
-            <button ion-button style="font-size: 1.7em" color="light" (click)="goToExternalUri('video')">
-              <ion-icon name="film"></ion-icon>
-            </button>
-          </ion-col>
-          <ion-col>
-              <h6 style="color:white;margin-top:15px!important;">Youtube</h6>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+    <ion-row justify-content-center>
+      <ion-col col-2></ion-col>
+    
+      <ion-col col-3 (click)="goToExternalUri('article')">
+          <ion-icon name="paper" style="color:cornflowerblue; font-size: 2em"></ion-icon> 
+          <h6 style="margin-left: -10px; font-size:18px; font-weight: bolder; color: antiquewhite;" (click)="goToExternalUri('article')">Reddit</h6>
+      </ion-col>
+      
+      <ion-col col-3 (click)="goToExternalUri('wiki')">
+          <ion-icon name="book" style="color:blue; font-size: 2em"></ion-icon>
+          <h6 style="margin-left: -5px; font-size:18px; font-weight: bolder; color: antiquewhite;" (click)="goToExternalUri('wiki')">Wiki</h6>
+      </ion-col>
+      
+      <ion-col col-3 (click)="goToExternalUri('video')">
+          <ion-icon name="film" style="color:red; font-size: 2em"></ion-icon>
+          <h6 style="margin-left: -15px; font-size:18px; font-weight: bolder; color: antiquewhite;" (click)="goToExternalUri('video')">Youtube</h6>
+      </ion-col>
+
+      <ion-col col-1></ion-col>
+    </ion-row>
+    <ion-row justify-content-center>
+      <p style=" text-align:cent;  font-size:18px; font-weight: bolder;margin-right: 10px"> <ion-icon name="pin" style="color: antiquewhite"></ion-icon> {{ launch.launch_site.site_name_long }}</p>
+    </ion-row>
+    <ion-row style="height: 100px; background: white; width: 100%;">
+        <div class="map" id="map" #map >
+        </div>
     </ion-row>
   </ion-grid>
 </ion-content>

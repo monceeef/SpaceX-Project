@@ -50,11 +50,11 @@
             <ion-list>
               <ion-row  class="blackBkgrd">
                 <ion-avatar float-start> 
-                  <img *ngIf="launch.links.mission_patch_small != null" [src]="launch.links.mission_patch_small" style="height: 70px; width: 70px;">
-                  <img *ngIf="launch.links.mission_patch_small == null" src="../../assets/imgs/spaceX _logo3.png" style="height: 70px; width: 70px;">
+                  <img *ngIf="launch.links.mission_patch_small != null" [src]="launch.links.mission_patch_small" style="height: 60px; width: 60px;">
+                  <img *ngIf="launch.links.mission_patch_small == null" src="../../assets/imgs/spaceX _logo3.png" style="height: 60px; width: 60px;">
                 </ion-avatar>
                 <ion-list float-end>
-                  <ion-row style="margin-left: 20px; word-break: break-all">
+                  <ion-row style="margin-left: 20px;" item-wrap>
                       <p class="whiteLabel launchMissionName" style="font-size:16px; font-weight: bolder; color: antiquewhite;"> 
                           {{ launch.mission_name }}
                       </p>
