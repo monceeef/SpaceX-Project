@@ -39,24 +39,12 @@ export class LaunchListPage {
       this.nextLaunch = data;
       this.countDownDate = new Date(this.nextLaunch.launch_date_local)
     });
+
     this.spacexAPI.getAllFuturLaunches().subscribe(data => {
       this.futureLaunches = data;
-      // Test of notification
-      this.localNotifications.schedule({
-        id: 4242,
-        text: "TestNotifications Mission starting now !",
-        trigger: { at: new Date(new Date().getTime() + 1000) }
-      });
-
-      data.forEach(futurLaunch => {
-        this.localNotifications.schedule({
-          id: futurLaunch.flight_number,
-          text: futurLaunch.mission_name + " Mission starting now !",
-          trigger: { at: new Date(futurLaunch.launch_date_local) }
-        });
-      });
     });
     
+
     this.spacexAPI.getAllLaunches().subscribe( data => {
       this.launches = data;
     });
@@ -145,7 +133,7 @@ export class LaunchListPage {
       let minutes = Math.floor((this.remainingTime % (1000 * 60 * 60)) / (1000 * 60));
       let seconds = Math.floor(this.remainingTime % (1000 * 60) / 1000);
 
-      console.log( days +' : ' + hours + ' : ' + minutes + ' : ' +seconds);
+      //console.log( days +' : ' + hours + ' : ' + minutes + ' : ' +seconds);
       this.remainingTimeString = days +'d ' + hours + 'h ' + minutes + 'm ' +seconds + 's';
     }
     
