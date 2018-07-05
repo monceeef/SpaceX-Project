@@ -90,6 +90,5 @@
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyA-6VcfyqzRg81BJVZ4--DwevSkVgP6X1s" />
         <variable name="API_KEY_FOR_IOS" value="AIzaSyA-6VcfyqzRg81BJVZ4--DwevSkVgP6X1s" />
     </plugin>
-    <engine name="android" spec="~7.0.0" />
-    <plugin name="de.appplant.cordova.plugin.local-notification" spec="^0.8.5" />
+    <engine name="android" spec="7.0.0" />
 </widget>
