@@ -8,36 +8,48 @@
 
 
 <ion-content *ngIf="rocket" padding class="rootRocket">
-  <h4 class="rocketUTitle">Country :</h4>
-  <p>{{rocket.country}}</p>
-  <h4 class="rocketUTitle">Details :</h4>
-  <ion-row>
-    <ion-col col-4 class="rocketUTitle">Stages :
-      <ion-row> {{rocket.stages}} </ion-row>
-    </ion-col>
-    <ion-col col-4 class="rocketUTitle">
-      CPL
-      <ion-row> {{rocket.cost_per_launch}} $</ion-row>
-    </ion-col>
-    <ion-col col-4 class="rocketUTitle">
-      Success Rate
-      <ion-row> {{rocket.success_rate_pct}} % </ion-row>
-    </ion-col>
-  </ion-row>
-  <h4 class="rocketUTitle">First Flight : </h4>
-  <p>{{rocket.first_flight}}</p>
-  <h4 class="rocketUTitle">Dimensions :</h4>
-  <ion-row class="rocketUTitle">
-    <ion-col col-12>
-      Height : {{rocket.height.meters}} m
-    </ion-col>
-    <ion-col col-12>
-      Diameter {{rocket.diameter.meters}} m
-    </ion-col>
-    <ion-col col-12>
-      Mass {{rocket.mass.kg}} kg
-    </ion-col>
-  </ion-row>
-  <h4 class="rocketUTitle">Description : </h4>
-  <p> {{ rocket.description }}</p>
-</ion-content>
+  <ion-content *ngIf="rocket" padding class="rootRocket">
+    <img src="../../assets/imgs/falconHeavy.jpg" style="width: 100%">
+    <div class="rocketContainer">
+      <h4 class="rocketUTitle">Country :</h4>
+      <p>{{rocket.country}}</p>
+    </div>
+    <div class="rocketContainer">
+      <h4 class="rocketUTitle">Details :</h4>
+      <ion-row>
+        <ion-col col-4 class="rocketUTitle">Stages :
+          <ion-row> {{rocket.stages}} </ion-row>
+        </ion-col>
+        <ion-col col-4 class="rocketUTitle">
+          CPL
+          <ion-row> {{rocket.cost_per_launch}} $</ion-row>
+        </ion-col>
+        <ion-col col-4 class="rocketUTitle">
+          Success Rate
+          <ion-row> {{rocket.success_rate_pct}} % </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="rocketContainer">
+      <h4 class="rocketUTitle">First Flight : </h4>
+      <p>{{rocket.first_flight}}</p>
+    </div>
+    <div class="rocketContainer">
+      <h4 class="rocketUTitle">Dimensions :</h4>
+      <ion-row class="rocketUTitle">
+        <ion-col col-12>
+          Height : {{rocket.height.meters}} m
+        </ion-col>
+        <ion-col col-12>
+          Diameter {{rocket.diameter.meters}} m
+        </ion-col>
+        <ion-col col-12>
+          Mass {{rocket.mass.kg}} kg
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="rocketContainer">
+      <h4 class="rocketUTitle">Description : </h4>
+      <p> {{ rocket.description }}</p>
+    </div>
+  </ion-content>

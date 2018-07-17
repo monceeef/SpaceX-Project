@@ -2,10 +2,19 @@ page-rocket-detail {
 }
 
 .rootRocket {
-  background-image: url("../../assets/imgs/bgRocket.png");
   background-repeat: round;
+  overflow: hidden;
+  background-color: #1d1d1d;
 }
 
 .rocketUTitle {
   color: #f5f6f2;
+}
+
+.rocketContainer {
+  background: black;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 10px;
+  padding: 15px;
 }
